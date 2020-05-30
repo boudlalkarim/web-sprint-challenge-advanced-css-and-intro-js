@@ -207,8 +207,16 @@ button:hover{
         }
     }
     @media(max-width: 500px) {
-        .title-container {
-            width: 100%;
-            
+        nav {
+            display: flex;
+            justify-content: space-evenly;
+            width:70%;
+
         }
     }
+    @media(max-width: 500px) {
+       .title-container h1 {
+           font-size: x-large;
+       }
+        }
+    
