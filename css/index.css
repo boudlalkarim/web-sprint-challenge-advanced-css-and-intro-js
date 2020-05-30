@@ -74,12 +74,27 @@ nav{
     justify-content:space-evenly;
     margin-top:5%;
 }
+
+
 nav a{
-    color:#626262;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:grey;
+    width: 50%;
 }
 nav span{
     border-left:3px solid #626262;
 
+}
+nav a {
+    color: black;
+
+}
+nav a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 /*Title Section Styles*/
 .title-container{
@@ -119,18 +134,81 @@ button:hover{
     color:white;
     box-shadow: 2px 2px 1px white;
 }
+
+.artist a:hoover{
+    color: magenta;
+}
+
+    .artist {
+       width: 100%;
+       padding-left: 50px;
+       padding-right: 50px;
+    }
+
+    .artists-container img {
+        width: 100%;
+        height: 230px;
+    }
+
+    .artist a {
+        display: flex;
+        align-items: center;
+        text-align: center;
+       
+        width: 100%;
+         padding-left: 50px;
+    }
+
 /*Artists Section Styles */
 .artists-container{
     display:flex;
+    
     justify-content: space-around;
     width:80%;
     margin:0 auto;
-}
 
-.artist{
-    width:40%;
-    text-align:center;
+
 }
-.artist img{
-    width:100%;
+@media(max-width:500px) {
+    .artists-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    } 
 }
+    @media(max-width:500px) {
+        .bio {
+            font-size: xx-small;
+            font-display: initial;
+            width: 50%;
+            padding-left: 89px;
+            
+        }
+     
+    }
+
+
+    @media(max-width: 500px) {
+        .artist img {
+            width: 50%;
+            height:150px;
+        }
+    }
+
+
+    @media(max-width: 500px) {
+       .artist a{
+           font-size: small;
+           color: grey;
+            width: 100%;
+           padding-left: 150px;
+        }
+    }
+    @media(max-width: 500px) {
+        .title-container {
+            width: 100%;
+            
+        }
+    }
