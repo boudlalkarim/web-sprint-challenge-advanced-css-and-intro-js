@@ -32,6 +32,7 @@ the concept that gives me more trouble is the mixin as im still trying to unders
 3. How would you explain the concept of a variable to someone new to programming?
 variable it lets you creat one word that could be used in different places and by changing that specific word willl let you change everything in thw whole code
 4. What is the purpose of using functions in code?
+is to avoid repetition in a code
 the purpose of using a function is 
 5. What is JSON data?
 JSON is 
