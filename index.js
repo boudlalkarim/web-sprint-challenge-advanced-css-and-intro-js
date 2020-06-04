@@ -168,7 +168,7 @@ const artists = [
       "bio": "Francisco José de Goya y Lucientes (; Spanish: [fɾanˈθisko xoˈse ðe ˈɣoʝa i luˈθjentes]; 30 March 1746 – 16 April 1828) was a Spanish romantic painter and printmaker. He is considered the most important Spanish artist of the late 18th and early 19th centuries and throughout his long career was a commentator and chronicler of his era. Immensely successful in his lifetime, Goya is often referred to as both the last of the Old Masters and the first of the moderns.  He was also one of the great contemporary portraitists.He was born to a modest family in 1746 in the village of Fuendetodos in Aragon. He studied painting from age 14 under José Luzán y Martinez and moved to Madrid to study with Anton Raphael Mengs. He married Josefa Bayeu in 1773; their life was characterised by an almost constant series of pregnancies and miscarriages, and only one child, a son, survived into adulthood. Goya became a court painter to the Spanish Crown in 1786 and this early portion of his career is marked by portraits of the Spanish aristocracy and royalty, and Rococo style tapestry cartoons designed for the royal palace.",
       "wikipedia": "http://en.wikipedia.org/wiki/Francisco_Goya",
       "paintings": 291
-    },
+    }, 
     {
       "id": 17,
       "name": "Frida Kahlo",
@@ -201,6 +201,9 @@ const artists = [
     }
 ]
 
+
+
+
 // 🖌🖼 M V P 🖼🖌 //
 
 /* Task 1: Practice accessing data above by console.log-ing following items:
@@ -211,72 +214,75 @@ const artists = [
 console.log(artists[0].name);
 console.log(artists[2].bio);
 
-/* Task 2: There is a typo in your dataset 😱 The 9th artist, 
-Vincent Van Gogh is currently Vincent Van Dough. Use an array
- method to fix this issue and console.log() to check your work. */
+/* Task 2: There is a typo in your dataset 😱 The 9th artist,
+ Vincent Van Gogh is currently Vincent Van Dough.
+  Use an array method to fix this issue and console.log() to check your work. */
 
- artists[8].name = "Vincent Van Gough";
- console.log(artists[8]);
+artists[8].name = "Vincent Van Gough";
+console.log(artists[8]);
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
  *     (2) a number which is the desired index in the array.
- * getArtistByIndex returns a string in the format `The artist at index {id} is {name}.`
+ * getArtistByIndex returns a string in the format 
+ * `The artist at index {id} is {name}.`
  * 
- * For example, if getArtistByIndex is invoked with the artists 
- * dataset and the number 0,
+ * For example, if getArtistByIndex is invoked with the artists
+ *  dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
 function getArtistByIndex(artists, index) {
-   return the `artist at index ${index} is ${artists[index].name}`;
-  }
+    return `The artist at index ${index} is ${artists[index].name}`;
+}
+
 console.log(getArtistByIndex(artists,3));
+
   /**
 
 
-/* Task 4: Create a function called get20s() that takes data as an argument and returns
- an array with names of artists who were born the 20th century (1900-2000) */
+/* Task 4: Create a function called get20s() that takes data as an 
+argument and returns an array with names of artists who were born
+ the 20th century (1900-2000) */
 
-function get20s(data){
- return artists.filter(e=>{
-   let birthYear = parseInt(e.years.slice(0,4));
-    if (birthYear > 1900 && birthYear < 2000) { return e; } 
-
- })
-
-console.log(get20s(artists));
-
-
-
+function get20s(artists){
+return artists.filter(e=>{
+  let birthYear = parseInt(e.years.slice(0,4));
+  if (birthYear > 1900 && birthYear < 2000) { return e; }
+})
 }
+console.log(get20s(artists));
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
  *     (2) a number which is the desired index in the array.
- * removeArtist removes an artist from the array at the index and console.logs the length of the remaining dataset.
+ * removeArtist removes an artist from the array at the index and console.logs 
+ * the length of the remaining dataset.
  * 
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset and log the number 19. 
  * 
  * Note that sucessfully invoking this function multiple times without
  *  refreshing your browser will continuously remove artists from the 
- * array until there are none left. If you refresh your browser, the data will reset.  
+ * array until there are none left. If you refresh your browser,  
+ * the data will reset.  
 */
-        
-  function removeArtist(array, num) {
-    array.splice(num,1);
+function removeArtist(index) { //decided not to pass artists as argument because the instructions say the function should manipulate the global array directly
+    artists.splice(index,1);
     console.log(artists.length);
-  }
-  
-  
+}
+
+//commented invokation to prevent interference with subsequent tasks
+//removeArtist(artists,3); 
+
   /**
 
 
 
 
-/* Task 6: Create a function called `addArtist` that can accept an array of information
- and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
+/* Task 6: Create a function called `addArtist` that can accept
+ an array of information and add it to the artists array. Then,
+  add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
 
 For example, you could add the following information: 
 id: 21
@@ -286,146 +292,46 @@ genre: Web Design,
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) 
 
-At the end, this function should console.log() the new array with information added"*/
+At the end, this function should console.log() the new array
+ with information added"*/
 
-function addArtist(artistId){
-artists.push(artistId);
-  }
-  addArtist({
-    id: 21,
-    name: "Kevin St.Onge",
-    years: "1981 - 2020",
-    genre: "Web Design",
-    nationality: "American",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  })
-  
-  console.log(artists);
+function addArtist(artistInfo){
 
+    //makes more sense to pass an object instead of an array
+    artists.push(artistInfo);
 
+    //with an array as the argument, it would look more like this:
+    //let artistObject = {};
+    //artistObject.id = artistInfo[0];
+    //artistObject.name = artistInfo[1];
+    //etc...
 
+}
+
+addArtist({
+  id: 21,
+  name: "Kevin St.Onge",
+  years: "1981 - 2020",
+  genre: "Web Design",
+  nationality: "American",
+  bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+})
+
+console.log(artists);
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
     (1) artists array 
 
 and returns an array with names of artists who painted more than 100 paintings.
 
-For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
+For example lotsOfArt(artists); will return 
+["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
 function lotsOfArt(artists){
-  
-
-return artists.filter(e=>e.paintings>100);
+  return artists.filter(e=>e.paintings>100);
 }
 
 console.log(lotsOfArt(artists));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
